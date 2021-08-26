@@ -1,0 +1,163 @@
+{
+    "_version": "1.21.0",
+    "sap.app": {
+        "id": "sap.pieces",
+        "type": "application",
+        "i18n": {
+            "bundleUrl": "i18n/i18n.properties",
+            "supportedLocales": [
+                ""
+            ],
+            "fallbackLocale": ""
+        },
+        "title": "pieces",
+        "description": "pieces",
+        "applicationVersion": {
+            "version": "1.0.0"
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "rootView": {
+            "viewName": "sap.pieces.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "app"
+        },
+        "dependencies": {
+            "minUI5Version": "1.84.1",
+            "libs": {
+                "sap.m": {}
+            }
+        },
+        "config": {
+            "booksLocal": "Books.json"
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "sap.pieces.i18n.i18n",
+                    "supportedLocales": [
+                        ""
+                    ],
+                    "fallbackLocale": ""
+                }
+            },
+            "book": {
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "Books.json"
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "viewPath": "sap.pieces.view",
+                "controlId": "app",
+                "controlAggregation": "pages",
+                "async": true
+            },
+            "routes": [
+                {
+                    "pattern": "",
+                    "name": "pieces",
+                    "target": "pieces"
+                },
+                {
+                    "pattern": "bookList",
+                    "name": "bookList",
+                    "target": "bookList"
+                },
+                {
+                    "pattern": "book/{Id}",
+                    "name": "book",
+                    "target": "book"
+                },
+                {
+                    "pattern": "graphic",
+                    "name": "graphic",
+                    "target": "graphic"
+                },
+                {
+                    "pattern": "ajax",
+                    "name": "ajax",
+                    "target": "ajax"
+                },
+                {
+                    "pattern": "jsonmodel",
+                    "name": "jsonmodel",
+                    "target": "jsonmodel"
+                },
+                {
+                    "pattern": "processList",
+                    "name": "processList",
+                    "target": "processList"
+                },
+                {
+                    "pattern": "process/{processId}",
+                    "name": "process",
+                    "target": "process"
+                }
+            ],
+            "targets": {
+                "pieces": {
+                    "viewName": "Pieces",
+                    "viewId": "pieces",
+                    "viewLevel": 1
+                },
+                "bookList": {
+                    "viewName": "library.BookList",
+                    "viewId": "bookList",
+                    "viewLevel": 2
+                },
+                "book": {
+                    "viewName": "library.Book",
+                    "viewId": "book",
+                    "viewLevel": 3
+                },
+                "graphic": {
+                    "viewName": "graphic.Graphic",
+                    "viewId": "graphic",
+                    "viewLevel": 2
+                },
+                "ajax": {
+                    "viewName": "ajax.Ajax",
+                    "viewId": "ajax",
+                    "viewLevel": 2
+                },
+                "jsonmodel": {
+                    "viewName": "model.JsonModel",
+                    "viewId": "jsonmodel",
+                    "viewLevel": 2
+                },
+                "processList": {
+                    "viewName": "process.ProcessList",
+                    "viewId": "processList",
+                    "viewLevel": 2
+                },
+                "process": {
+                    "viewName": "process.Process",
+                    "viewId": "process",
+                    "viewLevel": 3
+                }
+            }
+        },
+        "contentDensities": {},
+        "flexEnabled": true
+    }
+}

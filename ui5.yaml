@@ -1,0 +1,14 @@
+specVersion: '2.2'
+metadata:
+  name: lost-my-pieces
+type: application
+framework:
+  name: SAPUI5
+  version: "1.90.0"
+  libraries:
+    - name: sap.f
+    - name: sap.m
+    - name: sap.suite.ui.commons
+    - name: sap.ui.core
+    - name: sap.ui.layout
+    - name: themelib_sap_belize

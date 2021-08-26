@@ -1,0 +1,14 @@
+{
+    "bookList": [
+        {
+            "Id": "123",
+            "Name": "Pineapple",
+            "Price": 21
+        },
+        {
+            "Id": "1234",
+            "Name": "Pineapple12312431",
+            "Price": 21.123124
+        }
+    ]
+}

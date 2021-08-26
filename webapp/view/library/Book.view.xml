@@ -1,0 +1,9 @@
+<mvc:View
+        controllerName="sap.pieces.controller.library.Book"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns="sap.m">
+    <Page
+            showNavButton="true"
+            navButtonPress="onNavBack">
+    </Page>
+</mvc:View>

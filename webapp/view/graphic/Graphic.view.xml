@@ -1,0 +1,63 @@
+<mvc:View
+        controllerName="sap.pieces.controller.graphic.Graphic"
+        xmlns="sap.m"
+        xmlns:ng="sap.suite.ui.commons.networkgraph"
+        xmlns:layout="sap.suite.ui.commons.networkgraph.layout"
+        xmlns:mvc="sap.ui.core.mvc">
+    <Page
+            showNavButton="true"
+            navButtonPress="onNavBack">
+        <content>
+            <ng:Graph enableWheelZoom="false"
+                      nodes="{/nodes}"
+                      lines="{/lines}"
+                      groups="{/groups}"
+                      id="graph">
+                <ng:layoutData>
+                    <FlexItemData minWidth="75%" maxWidth="75%"/>
+                </ng:layoutData>
+                <ng:layoutAlgorithm>
+                    <layout:ForceDirectedLayout
+                            optimalDistanceConstant="0.26"
+                            maxIterations="{settings>/maxIterations}"
+                            maxTime="{settings>/maxTime}"
+                            initialTemperature="{settings>/initialTemperature}"
+                            coolDownStep="{settings>/coolDownStep}">
+                    </layout:ForceDirectedLayout>
+                </ng:layoutAlgorithm>
+                <ng:nodes>
+                    <ng:Node
+                            height="{settings>/height}"
+                            key="{key}"
+                            title="{title}"
+                            icon="{icon}"
+                            group="{group}"
+                            attributes="{path:'attributes', templateShareable:true}"
+                            shape="{shape}"
+                            status="{status}"
+                            x="{x}"
+                            y="{y}">
+                        <ng:attributes>
+                            <ng:ElementAttribute
+                                    label="{label}"
+                                    value="{value}"/>
+                        </ng:attributes>
+                    </ng:Node>
+                </ng:nodes>
+                <ng:lines>
+                    <ng:Line
+                            from="{from}"
+                            to="{to}"
+                            status="{status}">
+                    </ng:Line>
+                </ng:lines>
+                <ng:groups>
+                    <ng:Group
+                            key="{key}"
+                            title="{title}">
+                    </ng:Group>
+                </ng:groups>
+            </ng:Graph>
+        </content>
+    </Page>
+</mvc:View>

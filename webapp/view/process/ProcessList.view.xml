@@ -1,0 +1,48 @@
+<mvc:View
+        controllerName="sap.pieces.controller.process.ProcessList"
+        xmlns="sap.m"
+        xmlns:mvc="sap.ui.core.mvc">
+    <Page
+            showNavButton="true"
+            navButtonPress="onNavBack">
+        <content>
+            <Table
+                    width="auto"
+                    visible="true"
+                    items="{processList>/}">
+                <headerToolbar>
+                    <Toolbar>
+                        <Text text="Processes"/>
+                        <ToolbarSpacer/>
+                        <SearchField
+                                id="searchField"
+                                width="auto"
+                                search="onSearch"/>
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column>
+                        <Text text="id"/>
+                    </Column>
+                    <Column>
+                        <Text text="name"/>
+                    </Column>
+                    <Column>
+                        <Text text="createTime"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem
+                            type="Navigation"
+                            press="onPress">
+                        <cells>
+                            <ObjectIdentifier title="{processList>id}"/>
+                            <Text text="{processList>name}"/>
+                            <Text text="{processList>createTime}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

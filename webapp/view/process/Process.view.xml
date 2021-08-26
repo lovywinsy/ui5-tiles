@@ -1,0 +1,69 @@
+<mvc:View
+        controllerName="sap.pieces.controller.process.Process"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns="sap.m">
+    <Page
+            showNavButton="true"
+            navButtonPress="onNavBack">
+        <content>
+            <ObjectHeader
+                    title="{process>/name}"
+                    backgroundDesign="Solid">
+                <attributes>
+                    <ObjectAttribute title="Process Id" text="{process>/id}"/>
+                    <ObjectAttribute title="Create Time" text="{process>/createTime}"/>
+                </attributes>
+                <statuses>
+                    <ObjectStatus title="Status" text="Deployed" state="Success"/>
+                    <ObjectStatus title="PPS" text="{process>/pps}" state="Warning"/>
+                </statuses>
+            </ObjectHeader>
+            <IconTabBar class="sapUiNoContentPadding">
+                <items>
+                    <IconTabFilter text="Workflows">
+                        <Table
+                                growing="true"
+                                growingThreshold="200"
+                                width="auto"
+                                items="{workflowList>/}">
+                            <columns>
+                                <Column>
+                                    <Text text="Id"/>
+                                </Column>
+                                <Column>
+                                    <Text text="Current Activity Id"/>
+                                </Column>
+                                <Column>
+                                    <Text text="Status"/>
+                                </Column>
+                                <Column>
+                                    <Text text="Start Time"/>
+                                </Column>
+                                <Column>
+                                    <Text text="End Time"/>
+                                </Column>
+                                <Column>
+                                    <Text text="Duration"/>
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem
+                                        type="Navigation"
+                                        press="onPress">
+                                    <cells>
+                                        <ObjectIdentifier title="{workflowList>id}"/>
+                                        <Text text="{workflowList>currentNodeId}"/>
+                                        <ObjectStatus text="{workflowList>status}" state="{path: 'workflowList>status', formatter: '.formatter.statusColour'}"/>
+                                        <Text text="{workflowList>startTime}"/>
+                                        <Text text="{workflowList>endTime}"/>
+                                        <Text text="{workflowList>duration} (ms)"/>
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+        </content>
+    </Page>
+</mvc:View>
