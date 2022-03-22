@@ -11,8 +11,9 @@ sap.ui.define([
     'sap/ui/model/Filter',
     'sap/ui/model/FilterOperator',
     'sap/ui/core/Fragment',
-    'sap/ui/model/Sorter'
-], function (BaseController, JSONModel, compLibrary, Controller, TypeString, ColumnListItem, Label, SearchField, Token, Filter, FilterOperator, Fragment, Sorter) {
+    'sap/ui/model/Sorter',
+    './ODataService'
+], function (BaseController, JSONModel, compLibrary, Controller, TypeString, ColumnListItem, Label, SearchField, Token, Filter, FilterOperator, Fragment, Sorter, ODataService) {
     "use strict";
 
     return BaseController.extend("sap.pieces.controller.vh.ValueHelp", {
@@ -55,10 +56,9 @@ sap.ui.define([
                 }
             ;
 
-            alert(JSON.stringify(this.getView().getModel("ProductCollection").getData()));
 
             this.oProductsModel = new JSONModel(
-
+                ODataService.selectProducts()
             );
 
 

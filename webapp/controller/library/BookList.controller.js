@@ -6,9 +6,6 @@ sap.ui.define([
     return BaseController.extend("sap.pieces.controller.library.BookList", {
 
         onInit: function () {
-
-            alert(JSON.stringify(this.getModel().getProperty("book")));
-
             let oMetadata = {
                 "bTableVisible": true
             };
