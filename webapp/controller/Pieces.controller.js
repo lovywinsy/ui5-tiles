@@ -26,8 +26,14 @@ sap.ui.define([
 
         onNavToProcess: function () {
             this.getRouter().navTo("processList");
+        },
+
+        onNavToValueHelp: function () {
+            this.getRouter().navTo("valueHelp");
+        },
+
+        onNavToSplitter: function () {
+            this.getRouter().navTo("splitter");
         }
     })
 })
-
-

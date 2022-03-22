@@ -1,0 +1,11 @@
+<core:FragmentDefinition
+        xmlns="sap.m"
+        xmlns:core="sap.ui.core">
+    <ViewSettingsDialog
+            confirm=".handleGroupDialogConfirm2"
+            reset=".resetGroupDialog">
+        <groupItems>
+            <ViewSettingsItem text="Processes Designer" key="SupplierName" />
+        </groupItems>
+    </ViewSettingsDialog>
+</core:FragmentDefinition>

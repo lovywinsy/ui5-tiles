@@ -38,7 +38,8 @@
             }
         },
         "config": {
-            "booksLocal": "Books.json"
+            "booksLocal": "Books.json",
+            "productsLocal": "Products.json"
         },
         "models": {
             "i18n": {
@@ -54,6 +55,10 @@
             "book": {
                 "type": "sap.ui.model.json.JSONModel",
                 "uri": "Books.json"
+            },
+            "Products": {
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "Products.json"
             }
         },
         "resources": {
@@ -112,6 +117,16 @@
                     "pattern": "process/{processId}",
                     "name": "process",
                     "target": "process"
+                },
+                {
+                    "pattern": "valueHelp",
+                    "name": "valueHelp",
+                    "target": "valueHelp"
+                },
+                {
+                    "pattern": "splitter",
+                    "name": "splitter",
+                    "target": "splitter"
                 }
             ],
             "targets": {
@@ -154,6 +169,16 @@
                     "viewName": "process.Process",
                     "viewId": "process",
                     "viewLevel": 3
+                },
+                "valueHelp": {
+                    "viewName": "vh.ValueHelp",
+                    "viewId": "valueHelp",
+                    "viewLevel": 2
+                },
+                "splitter": {
+                    "viewName": "splitter.Splitter",
+                    "viewId": "splitter",
+                    "viewLevel": 1
                 }
             }
         },

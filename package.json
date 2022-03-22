@@ -4,7 +4,7 @@
   "description": "ui5 pieces from LovyWinsy",
   "main": "index.js",
   "scripts": {
-    "start": "ui5 serve"
+    "start": "ui5 serve --config=ui5.yaml  --open index.html"
   },
   "author": "LovyWinsy",
   "license": "ISC"

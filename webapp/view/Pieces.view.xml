@@ -13,6 +13,10 @@
             <GenericTile class="sapUiTinyMargin tileLayout" header="Ajax" press="onNavToAjax"/>
 
             <GenericTile class="sapUiTinyMargin tileLayout" header="JSONModel" press="onNavToJsonModel"/>
+
+            <GenericTile class="sapUiTinyMargin tileLayout" header="Value Help" press="onNavToValueHelp"/>
+
+            <GenericTile class="sapUiTinyMargin tileLayout" header="Splitter" press="onNavToSplitter"/>
         </content>
     </Page>
 </mvc:View>

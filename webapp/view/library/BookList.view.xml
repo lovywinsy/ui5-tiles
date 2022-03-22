@@ -1,6 +1,7 @@
 <mvc:View
         controllerName="sap.pieces.controller.library.BookList"
         xmlns="sap.m"
+        xmlns:plugins="sap.m.plugins"
         xmlns:mvc="sap.ui.core.mvc">
     <Page
             showNavButton="true"
@@ -9,10 +10,14 @@
             <Table
                     id="table"
                     width="auto"
-                    visible="{=	${book>/bookList/length} > 1}"
+                    visible="{ocModel>/bTableVisible}"
                     items="{book>/bookList}">
+                <dependents>
+                    <plugins:ColumnResizer/>
+                </dependents>
                 <headerToolbar>
                     <Toolbar>
+                        <Button text="hide" press=".onHide"></Button>
                         <ToolbarSpacer/>
                         <SearchField
                                 id="searchField"
