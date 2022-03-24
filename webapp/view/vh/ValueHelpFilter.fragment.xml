@@ -11,6 +11,8 @@
             supportRanges="true"
             key="ProductId"
             descriptionKey="Name"
+            selectionChange="onSelectionChange"
+            updateSelection="onUpdateSelection"
     >
         <filterBar>
             <fb:FilterBar advancedMode="true" search=".onFilterBarSearch" isRunningInValueHelpDialog="true">

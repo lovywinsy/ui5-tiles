@@ -1,6 +1,25 @@
 sap.ui.define([], function () {
     "use strict";
     return {
+        formatName: function (sName) {
+            alert(sName);
+            return "aa";
+        },
+
+        selectCols: function () {
+            return {
+                "cols": [{
+                    "label": "ProductId", "template": "ProductId", "width": "5rem"
+                }, {
+                    "label": "Product Name", "template": "Name"
+                }, {
+                    "label": "Category", "template": "Category"
+                }, {
+                    "label": "SupplierName", "template": "SupplierName"
+                },]
+            };
+        },
+
         selectProducts: function () {
             return [{
                 "ProductId": "HT-1000",
