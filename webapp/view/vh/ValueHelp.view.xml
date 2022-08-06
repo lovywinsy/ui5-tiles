@@ -1,22 +1,24 @@
-<mvc:View height="100%" controllerName="sap.pieces.controller.vh.ValueHelp"
+<mvc:View controllerName="sap.pieces.controller.vh.ValueHelp"
           xmlns:mvc="sap.ui.core.mvc"
-          xmlns:layout="sap.ui.layout"
-          xmlns:form="sap.ui.layout.form"
-          xmlns="sap.m">
-    <layout:Grid defaultSpan="L12 M12 S12">
-        <layout:content>
-            <form:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanM="12" labelSpanL="12"
-                             labelSpanXL="12" emptySpanL="6" emptySpanM="6">
-                <form:content>
-                    <Label text="Products" labelFor="multiInput"/>
-                    <MultiInput
-                            id="multiInput"
-                            valueHelpOnly="true"
-                            valueHelpRequest=".onValueHelpRequested"
-                    >
-                    </MultiInput>
-                </form:content>
-            </form:SimpleForm>
-        </layout:content>
-    </layout:Grid>
+          xmlns="sap.m"
+          xmlns:fb="sap.ui.comp.filterbar"
+          height="100%">
+    <Page
+            showNavButton="true"
+            navButtonPress="onNavBack">
+        <content>
+            <fb:FilterBar id="filterbar" useToolbar="false" showGoOnFB="false">
+                <fb:filterItems>
+                    <fb:FilterItem name="process" label="Process">
+                        <fb:control>
+                            <MultiInput
+                                    id="multiInput"
+                                    valueHelpOnly="true"
+                                    valueHelpRequest=".onValueHelpRequested"/>
+                        </fb:control>
+                    </fb:FilterItem>
+                </fb:filterItems>
+            </fb:FilterBar>
+        </content>
+    </Page>
 </mvc:View>

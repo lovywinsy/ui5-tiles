@@ -1,22 +1,60 @@
 <mvc:View
         controllerName="sap.pieces.controller.Pieces"
+        xmlns:mvc="sap.ui.core.mvc"
         xmlns="sap.m"
-        xmlns:mvc="sap.ui.core.mvc">
-    <Page title="SAP UI5 Pieces">
-        <content>
-            <GenericTile class="sapUiTinyMargin tileLayout" header="Processes" press="onNavToProcess"/>
-
-            <GenericTile class="sapUiTinyMargin tileLayout" header="Library" press="onNavToLibrary"/>
-
-            <GenericTile class="sapUiTinyMargin tileLayout" header="Graphic" subheader="SAP UI5 Graphic" press="onNavToGraphic"/>
-
-            <GenericTile class="sapUiTinyMargin tileLayout" header="Ajax" press="onNavToAjax"/>
-
-            <GenericTile class="sapUiTinyMargin tileLayout" header="JSONModel" press="onNavToJsonModel"/>
-
-            <GenericTile class="sapUiTinyMargin tileLayout" header="Value Help" press="onNavToValueHelp"/>
-
-            <GenericTile class="sapUiTinyMargin tileLayout" header="Splitter" press="onNavToSplitter"/>
-        </content>
-    </Page>
+        xmlns:f="sap.f"
+        height="100%">
+    <f:DynamicPage class="sapUiNoContentPadding"
+                   stickySubheaderProvider="iconTabBar">
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="SAP UI5 Research Pieces"/>
+                </f:heading>
+                <f:expandedContent>
+                    <Label text="subheadings..."/>
+                </f:expandedContent>
+                <f:navigationActions>
+                    <Button icon="sap-icon://syntax" type="Transparent"/>
+                </f:navigationActions>
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:content>
+            <IconTabBar id="iconTabBar" class="sapUiResponsiveContentPadding">
+                <items>
+                    <IconTabFilter text="Default">
+                        <GenericTile class="sapUiTinyMarginEnd" header="Processes" press="onNavToProcess">
+                            <TileContent>
+                                <ImageContent src="sap-icon://electronic-medical-record"/>
+                            </TileContent>
+                        </GenericTile>
+                        <GenericTile class="sapUiTinyMarginEnd" header="Graphic" subheader="SAP UI5 Graphic" press="onNavToGraphic">
+                            <TileContent>
+                                <ImageContent src="sap-icon://overview-chart"/>
+                            </TileContent>
+                        </GenericTile>
+                        <GenericTile class="sapUiTinyMarginEnd" header="Value Help" press="onNavToValueHelp">
+                            <TileContent>
+                                <ImageContent src="sap-icon://table-view"/>
+                            </TileContent>
+                        </GenericTile>
+                        <GenericTile class="sapUiTinyMarginEnd" header="Splitter" press="onNavToSplitter">
+                            <TileContent>
+                                <ImageContent src="sap-icon://resize-vertical"/>
+                            </TileContent>
+                        </GenericTile>
+                    </IconTabFilter>
+                    <IconTabFilter text="Monitoring Mirror">
+                        <Text text="Monitoring Mirror go here ..."/>
+                    </IconTabFilter>
+                    <IconTabFilter text="Controls">
+                        <Text text="Controls go here ..."/>
+                    </IconTabFilter>
+                    <IconTabFilter text="Testing">
+                        <Text text="Testing goes here ..."/>
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+        </f:content>
+    </f:DynamicPage>
 </mvc:View>

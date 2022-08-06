@@ -1,146 +1,30 @@
 <mvc:View controllerName="sap.pieces.controller.splitter.Splitter"
-          xmlns="sap.m"
+          xmlns:l="sap.ui.layout"
           xmlns:mvc="sap.ui.core.mvc"
           xmlns:core="sap.ui.core"
-          xmlns:l="sap.ui.layout"
-          xmlns:plugins="sap.m.plugins">
-    <l:Splitter>
-
-        <Panel class="sapUiNoContentPadding">
-            <layoutData>
-                <l:SplitterLayoutData size="auto"/>
-            </layoutData>
-            <headerToolbar>
-                <Toolbar height="3rem">
-                    <Title text="asdasdasdasdasd"/>
-                    <ToolbarSpacer/>
-                    <Button icon="sap-icon://decline"/>
-                </Toolbar>
-            </headerToolbar>
-            <content>
-                <Table items="{supplierList>/Suppliers}"
-                       fixedLayout="false">
-                    <dependents>
-                        <plugins:ColumnResizer/>
-                    </dependents>
-                    <columns>
-                        <Column>
-                            <Text text="Id"/>
-                        </Column>
-                        <Column>
-                            <Text text="Name"/>
-                        </Column>
-                        <Column>
-                            <Text text="City"/>
-                        </Column>
-                    </columns>
-                    <items>
-                        <ColumnListItem vAlign="Middle">
-                            <cells>
-                                <Text text="{supplierList>ID}"/>
-                                <Text text="{supplierList>Name}"/>
-                                <Text text="{supplierList>Address/Street}"/>
-                            </cells>
-                        </ColumnListItem>
-                    </items>
+          xmlns="sap.m"
+          height="100%">
+    <Page
+            showNavButton="true"
+            navButtonPress="onNavBack">
+        <content>
+            <l:Splitter>
+                <Button width="100%" text="Content 1" type="Accept">
+                    <layoutData>
+                        <l:SplitterLayoutData size="300px"/>
+                    </layoutData>
+                </Button>
+                <Button width="100%" text="Content 2" type="Reject">
                     <layoutData>
                         <l:SplitterLayoutData size="auto"/>
                     </layoutData>
-                </Table>
-            </content>
-        </Panel>
-
-        <Panel class="sapUiNoContentPadding">
-            <layoutData>
-                <l:SplitterLayoutData size="auto"/>
-            </layoutData>
-            <headerToolbar>
-                <Toolbar height="3rem">
-                    <Title text="asdasdasdasdasd"/>
-                    <ToolbarSpacer/>
-                    <Button icon="sap-icon://decline"/>
-                </Toolbar>
-            </headerToolbar>
-            <content>
-                <Table items="{supplierList>/Suppliers}"
-                       fixedLayout="false">
-                    <dependents>
-                        <plugins:ColumnResizer/>
-                    </dependents>
-                    <columns>
-                        <Column>
-                            <Text text="Id"/>
-                        </Column>
-                        <Column>
-                            <Text text="Name"/>
-                        </Column>
-                        <Column>
-                            <Text text="City"/>
-                        </Column>
-                    </columns>
-                    <items>
-                        <ColumnListItem vAlign="Middle">
-                            <cells>
-                                <Text text="{supplierList>ID}"/>
-                                <Text text="{supplierList>Name}"/>
-                                <Text text="{supplierList>Address/Street}"/>
-                            </cells>
-                        </ColumnListItem>
-                    </items>
+                </Button>
+                <Button width="100%" text="Content 3" type="Emphasized">
                     <layoutData>
-                        <l:SplitterLayoutData size="auto"/>
+                        <l:SplitterLayoutData size="30%" minSize="200px"/>
                     </layoutData>
-                </Table>
-            </content>
-        </Panel>
-
-        <Panel class="sapUiNoContentPadding">
-            <layoutData>
-                <l:SplitterLayoutData size="auto"/>
-            </layoutData>
-            <headerToolbar>
-                <Toolbar height="3rem">
-                    <Title text="asdasdasdasdasd"/>
-                    <ToolbarSpacer/>
-                    <Button icon="sap-icon://decline"/>
-                </Toolbar>
-            </headerToolbar>
-            <content>
-                <Table items="{supplierList>/Suppliers}"
-                       fixedLayout="false">
-                    <dependents>
-                        <plugins:ColumnResizer/>
-                    </dependents>
-                    <columns>
-                        <Column>
-                            <Text text="Id"/>
-                        </Column>
-                        <Column>
-                            <Text text="Name"/>
-                        </Column>
-                        <Column>
-                            <Text text="City"/>
-                        </Column>
-                    </columns>
-                    <items>
-                        <ColumnListItem vAlign="Middle">
-                            <cells>
-                                <Link text="{supplierList>ID}" press="onSubProcessClick" wrapping="true">
-                                    <customData>
-                                        <core:CustomData key="runtimeType" value="{supplierList>Name}"/>
-                                    </customData>
-                                </Link>
-                                <Text text="{supplierList>Name}"/>
-                                <Text text="{supplierList>Address/Street}"/>
-                            </cells>
-                        </ColumnListItem>
-                    </items>
-                    <layoutData>
-                        <l:SplitterLayoutData size="auto"/>
-                    </layoutData>
-                </Table>
-            </content>
-        </Panel>
-
-    </l:Splitter>
+                </Button>
+            </l:Splitter>
+        </content>
+    </Page>
 </mvc:View>

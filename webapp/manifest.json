@@ -84,29 +84,9 @@
                     "target": "pieces"
                 },
                 {
-                    "pattern": "bookList",
-                    "name": "bookList",
-                    "target": "bookList"
-                },
-                {
-                    "pattern": "book/{Id}",
-                    "name": "book",
-                    "target": "book"
-                },
-                {
                     "pattern": "graphic",
                     "name": "graphic",
                     "target": "graphic"
-                },
-                {
-                    "pattern": "ajax",
-                    "name": "ajax",
-                    "target": "ajax"
-                },
-                {
-                    "pattern": "jsonmodel",
-                    "name": "jsonmodel",
-                    "target": "jsonmodel"
                 },
                 {
                     "pattern": "processList",
@@ -135,29 +115,9 @@
                     "viewId": "pieces",
                     "viewLevel": 1
                 },
-                "bookList": {
-                    "viewName": "library.BookList",
-                    "viewId": "bookList",
-                    "viewLevel": 2
-                },
-                "book": {
-                    "viewName": "library.Book",
-                    "viewId": "book",
-                    "viewLevel": 3
-                },
                 "graphic": {
                     "viewName": "graphic.Graphic",
                     "viewId": "graphic",
-                    "viewLevel": 2
-                },
-                "ajax": {
-                    "viewName": "ajax.Ajax",
-                    "viewId": "ajax",
-                    "viewLevel": 2
-                },
-                "jsonmodel": {
-                    "viewName": "model.JsonModel",
-                    "viewId": "jsonmodel",
                     "viewLevel": 2
                 },
                 "processList": {
@@ -178,7 +138,7 @@
                 "splitter": {
                     "viewName": "splitter.Splitter",
                     "viewId": "splitter",
-                    "viewLevel": 1
+                    "viewLevel": 2
                 }
             }
         },

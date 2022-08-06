@@ -8,11 +8,9 @@ sap.ui.define([
         onInit: function () {
             let oModel = new JSONModel(jQuery.sap.getModulePath(
                 "sap.pieces",
-                "/graph.json"));
+                "/data/graph.json"));
             oModel.setSizeLimit(Number.MAX_SAFE_INTEGER);
             this.getView().setModel(oModel);
-
-
             this.oModelSettings = new JSONModel({
                 maxIterations: 200,
                 maxTime: 500,

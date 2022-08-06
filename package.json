@@ -1,11 +1,11 @@
 {
-  "name": "lost-my-pieces",
-  "version": "1.0.0",
-  "description": "ui5 pieces from LovyWinsy",
-  "main": "index.js",
-  "scripts": {
-    "start": "ui5 serve --config=ui5.yaml  --open index.html"
-  },
-  "author": "LovyWinsy",
-  "license": "ISC"
+    "name": "lost-my-pieces",
+    "version": "1.0.0",
+    "description": "ui5 pieces from LovyWinsy",
+    "main": "index.js",
+    "scripts": {
+        "start": "ui5 serve --config=ui5.yaml  --open index.html"
+    },
+    "author": "LovyWinsy",
+    "license": "ISC"
 }

@@ -8,20 +8,8 @@ sap.ui.define([
         onInit: function () {
         },
 
-        onNavToLibrary: function () {
-            this.getRouter().navTo("bookList");
-        },
-
         onNavToGraphic: function () {
             this.getRouter().navTo("graphic");
-        },
-
-        onNavToAjax: function () {
-            this.getRouter().navTo("ajax");
-        },
-
-        onNavToJsonModel: function () {
-            this.getRouter().navTo("jsonmodel");
         },
 
         onNavToProcess: function () {
