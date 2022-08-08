@@ -1,0 +1,12 @@
+<mvc:View controllerName="sap.pieces.controller.chart.Chart"
+          xmlns:mvc="sap.ui.core.mvc"
+          xmlns="sap.m"
+          height="100%">
+    <Page
+            showNavButton="true"
+            navButtonPress="onNavBack">
+        <content>
+
+        </content>
+    </Page>
+</mvc:View>

@@ -107,6 +107,11 @@
                     "pattern": "splitter",
                     "name": "splitter",
                     "target": "splitter"
+                },
+                {
+                    "pattern": "chart",
+                    "name": "chart",
+                    "target": "chart"
                 }
             ],
             "targets": {
@@ -138,6 +143,11 @@
                 "splitter": {
                     "viewName": "splitter.Splitter",
                     "viewId": "splitter",
+                    "viewLevel": 2
+                },
+                "chart": {
+                    "viewName": "chart.Chart",
+                    "viewId": "chart",
                     "viewLevel": 2
                 }
             }

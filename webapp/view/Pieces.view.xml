@@ -43,6 +43,11 @@
                                 <ImageContent src="sap-icon://resize-vertical"/>
                             </TileContent>
                         </GenericTile>
+                        <GenericTile class="sapUiTinyMarginEnd" header="Chart" press="onNavToChart">
+                            <TileContent>
+                                <ImageContent src="sap-icon://bar-chart"/>
+                            </TileContent>
+                        </GenericTile>
                     </IconTabFilter>
                     <IconTabFilter text="Monitoring Mirror">
                         <Text text="Monitoring Mirror go here ..."/>

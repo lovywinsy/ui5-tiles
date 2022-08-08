@@ -4,7 +4,7 @@ sap.ui.define([
 ], function (BaseController, JSONModel) {
     "use strict";
 
-    return BaseController.extend("sap.pieces.controller.splitter.Splitter", {
+    return BaseController.extend("sap.pieces.controller.chart.Chart", {
         onInit: function () {
         },
 

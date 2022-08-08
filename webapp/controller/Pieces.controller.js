@@ -22,6 +22,10 @@ sap.ui.define([
 
         onNavToSplitter: function () {
             this.getRouter().navTo("splitter");
+        },
+
+        onNavToChart: function () {
+            this.getRouter().navTo("chart");
         }
     })
 })
