@@ -1,12 +1,32 @@
 <mvc:View controllerName="sap.pieces.controller.chart.Chart"
-          xmlns:mvc="sap.ui.core.mvc"
           xmlns="sap.m"
-          height="100%">
+          xmlns:commons="sap.suite.ui.commons"
+          xmlns:mvc="sap.ui.core.mvc"
+          xmlns:viz="sap.viz.ui5.controls">
     <Page
+            class="sapUiNoContentPadding"
             showNavButton="true"
             navButtonPress="onNavBack">
         <content>
-
+            <commons:ChartContainer
+                    id="chartContainer"
+                    showFullScreen="true"
+                    showPersonalization="false"
+                    autoAdjustHeight="false"
+                    personalizationPress="attachPersonalizationPress"
+                    contentChange="attachContentChange"
+                    title="Process Trending">
+                <commons:content>
+                    <commons:ChartContainerContent
+                            icon="sap-icon://line-chart"
+                            title="Line Chart">
+                        <commons:content>
+                            <viz:VizFrame id="chartContainerVizFrame" height="700px" width="100%"
+                                          uiConfig="{applicationSet:'fiori'}"/>
+                        </commons:content>
+                    </commons:ChartContainerContent>
+                </commons:content>
+            </commons:ChartContainer>
         </content>
     </Page>
 </mvc:View>
