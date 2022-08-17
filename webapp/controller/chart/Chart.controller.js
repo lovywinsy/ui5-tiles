@@ -38,13 +38,16 @@ sap.ui.define([
                     dimensions: [{
                         name: 'date',
                         value: "{date}"
+                    }, {
+                        name: 'hour',
+                        value: "{hour}"
                     }],
                     measures: [{
-                        name: 'total',
-                        value: '{total}'
+                        name: 'hour_total',
+                        value: '{hour_total}'
                     }, {
-                        name: 'avg_duration',
-                        value: '{avg_duration}'
+                        name: 'hour_avg_duration',
+                        value: '{hour_avg_duration}'
                     }],
                     data: {
                         path: "/Processes"
@@ -88,15 +91,15 @@ sap.ui.define([
                 feedItems: [{
                     'uid': "valueAxis",
                     'type': "Measure",
-                    'values': ["total"]
+                    'values': ["hour_total"]
                 }, {
                     'uid': "valueAxis2",
                     'type': "Measure",
-                    'values': ["avg_duration"]
+                    'values': ["hour_avg_duration"]
                 }, {
                     'uid': "axisLabels",
                     'type': "Dimension",
-                    'values': ["date"]
+                    'values': ["date", "hour"]
                 }]
             }
         },
