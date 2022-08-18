@@ -11,7 +11,7 @@
             <commons:ChartContainer
                     id="chartContainer"
                     showFullScreen="true"
-                    showPersonalization="false"
+                    showPersonalization="true"
                     autoAdjustHeight="false"
                     personalizationPress="attachPersonalizationPress"
                     contentChange="attachContentChange"
