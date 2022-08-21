@@ -2,35 +2,53 @@
     "Processes": [
         {
             "date": "2022-07-22",
-            "hour": 1,
-            "date_total": 120,
-            "hour_total": 20,
-            "date_avg_duration": 15,
-            "hour_avg_duration": 10
-        },
-        {
-            "date": "2022-07-22",
-            "hour": 2,
-            "date_total": 120,
-            "hour_total": 100,
-            "date_avg_duration": 15,
-            "hour_avg_duration": 15
+            "total": 1232,
+            "avg_duration": 123
         },
         {
             "date": "2022-07-23",
-            "hour": 1,
-            "date_total": 220,
-            "hour_total": 30,
-            "date_avg_duration": 20,
-            "hour_avg_duration": 22
+            "total": 2122,
+            "avg_duration": 323
         },
         {
-            "date": "2022-07-23",
-            "hour": 2,
-            "date_total": 220,
-            "hour_total": 200,
-            "date_avg_duration": 20,
-            "hour_avg_duration": 26
+            "date": "2022-07-24",
+            "total": 3143,
+            "avg_duration": 959
+        },
+        {
+            "date": "2022-07-25",
+            "total": 2123,
+            "avg_duration": 122
+        },
+        {
+            "date": "2022-07-26",
+            "total": 4438,
+            "avg_duration": 1459
+        },
+        {
+            "date": "2022-07-27",
+            "total": 756,
+            "avg_duration": 159
+        },
+        {
+            "date": "2022-07-28",
+            "total": 5124,
+            "avg_duration": 459
+        },
+        {
+            "date": "2022-07-29",
+            "total": 12534,
+            "avg_duration": 1259
+        },
+        {
+            "date": "2022-07-30",
+            "total": 13634,
+            "avg_duration": 1459
+        },
+        {
+            "date": "2022-07-31",
+            "total": 1294,
+            "avg_duration": 759
         }
     ]
 }
