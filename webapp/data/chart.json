@@ -1,54 +1,124 @@
 {
     "Processes": [
         {
-            "date": "2022-07-22",
+            "date": "7/22/2022",
             "total": 1232,
-            "avg_duration": 123
+            "success": 245,
+            "failure": 123
         },
         {
-            "date": "2022-07-23",
-            "total": 2122,
-            "avg_duration": 323
+            "date": "7/23/2022",
+            "total": 122,
+            "success": 24,
+            "failure": 323
         },
         {
-            "date": "2022-07-24",
-            "total": 3143,
-            "avg_duration": 959
+            "date": "7/24/2022",
+            "total": 143,
+            "success": 245,
+            "failure": 959
         },
         {
-            "date": "2022-07-25",
+            "date": "7/25/2022",
             "total": 2123,
-            "avg_duration": 122
+            "success": 123,
+            "failure": 122
         },
         {
-            "date": "2022-07-26",
-            "total": 4438,
-            "avg_duration": 1459
+            "date": "7/26/2022",
+            "total": 438,
+            "success": 234,
+            "failure": 1459
         },
         {
-            "date": "2022-07-27",
+            "date": "7/27/2022",
             "total": 756,
-            "avg_duration": 159
+            "success": 1232,
+            "failure": 159
         },
         {
-            "date": "2022-07-28",
-            "total": 5124,
-            "avg_duration": 459
+            "date": "7/28/2022",
+            "total": 124,
+            "success": 234,
+            "failure": 459
         },
         {
-            "date": "2022-07-29",
-            "total": 12534,
-            "avg_duration": 1259
+            "date": "7/29/2022",
+            "total": 534,
+            "success": 122,
+            "failure": 1259
         },
         {
-            "date": "2022-07-30",
-            "total": 13634,
-            "avg_duration": 1459
+            "date": "7/30/2022",
+            "total": 1634,
+            "success": 777,
+            "failure": 1459
         },
         {
-            "date": "2022-07-31",
-            "total": 1294,
-            "avg_duration": 759
+            "date": "7/31/2022",
+            "total": 94,
+            "success": 666,
+            "failure": 759
+        },
+        {
+            "date": "8/1/2022",
+            "total": 1232,
+            "success": 555,
+            "failure": 123
+        },
+        {
+            "date": "8/2/2022",
+            "total": 122,
+            "success": 1234,
+            "failure": 323
+        },
+        {
+            "date": "8/3/2022",
+            "total": 143,
+            "success": 534,
+            "failure": 959
+        },
+        {
+            "date": "8/4/2022",
+            "total": 2123,
+            "success": 1232,
+            "failure": 122
+        },
+        {
+            "date": "8/5/2022",
+            "total": 438,
+            "success": 124,
+            "failure": 1459
+        },
+        {
+            "date": "8/6/2022",
+            "total": 756,
+            "success": 1232,
+            "failure": 159
+        },
+        {
+            "date": "8/7/2022",
+            "total": 124,
+            "success": 235,
+            "failure": 459
+        },
+        {
+            "date": "8/8/2022",
+            "total": 534,
+            "success": 1232,
+            "failure": 1259
+        },
+        {
+            "date": "8/9/2022",
+            "total": 1634,
+            "success": 122,
+            "failure": 1459
+        },
+        {
+            "date": "8/10/2022",
+            "total": 94,
+            "success": 532,
+            "failure": 759
         }
     ]
 }

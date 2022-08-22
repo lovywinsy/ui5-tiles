@@ -37,20 +37,21 @@ sap.ui.define([
                 dataset: {
                     dimensions: [{
                         name: 'date',
-                        value: "{date}"
+                        value: "{date}",
+                        dataType: 'date'
                     }],
                     measures: [{
-                        name: 'success',
+                        name: 'total',
                         value: '{total}'
                     }, {
-                        name: 'fail',
-                        value: '{avg_duration}'
+                        name: 'failure',
+                        value: '{failure}'
                     }],
                     data: {
                         path: "/Processes"
                     }
                 },
-                type: "dual_line",
+                type: "dual_timeseries_combination",
                 properties: {
                     plotArea: {
                         showGap: true,
@@ -70,7 +71,7 @@ sap.ui.define([
                             visible: true
                         }
                     },
-                    axisLabels: {
+                    timeAxis: {
                         title: {
                             visible: false
                         },
@@ -88,13 +89,13 @@ sap.ui.define([
                 feedItems: [{
                     'uid': "valueAxis",
                     'type': "Measure",
-                    'values': ["success"]
+                    'values': ["total"]
                 }, {
                     'uid': "valueAxis2",
                     'type': "Measure",
-                    'values': ["fail"]
+                    'values': ["failure"]
                 }, {
-                    'uid': "axisLabels",
+                    'uid': "timeAxis",
                     'type': "Dimension",
                     'values': ["date"]
                 }]
@@ -134,6 +135,97 @@ sap.ui.define([
             for (var i = 0; i < feedItems.length; i++) {
                 vizFrame.addFeed(new FeedItem(feedItems[i]));
             }
+        },
+
+        onChangeMeasureFirst: function (oEvent) {
+            this.byId(this._constants.vizFrame.id).destroyDataset();
+            this.byId(this._constants.vizFrame.id).destroyFeeds();
+
+            const newMeasure = oEvent.getSource().getSelectedItem().getKey();
+
+            this._constants = {
+                sampleName: "sap/suite/ui/commons/sample/ChartContainerSimpleToolbar",
+                vizFrame: {
+                    id: "chartContainerVizFrame",
+                    dataset: {
+                        dimensions: [{
+                            name: 'date',
+                            value: "{date}",
+                            dataType: 'date'
+                        }],
+                        measures: [{
+                            name: 'total',
+                            value: '{total}'
+                        }, {
+                            name: 'success',
+                            value: '{success}'
+                        }, {
+                            name: 'failure',
+                            value: '{failure}'
+                        }],
+                        data: {
+                            path: "/Processes"
+                        }
+                    },
+                    type: "dual_line",
+                    properties: {
+                        plotArea: {
+                            showGap: true,
+                            dataLabel: {
+                                visible: true
+                            }
+                        },
+                        valueAxis: {
+                            visible: true,
+                            title: {
+                                visible: true
+                            }
+                        },
+                        valueAxis2: {
+                            visible: true,
+                            title: {
+                                visible: true
+                            }
+                        },
+                        categoryAxis: {
+                            title: {
+                                visible: true
+                            },
+                            label: {
+                                formatString: ChartFormatter.DefaultPattern.MEDIUMDAY
+
+                            },
+                            interval: {
+                                unit: ''
+                            }
+                        },
+                        title: {
+                            visible: false
+                        },
+                        interaction: {
+                            syncValueAxis: false
+                        }
+                    },
+                    feedItems: [{
+                        'uid': "valueAxis",
+                        'type': "Measure",
+                        'values': [newMeasure]
+                    }, {
+                        'uid': "valueAxis2",
+                        'type': "Measure",
+                        'values': ["failure"]
+                    }, {
+                        'uid': "categoryAxis",
+                        'type': "Dimension",
+                        'values': ["date"]
+                    }]
+                }
+            },
+                this._updateVizFrame(this.byId(this._constants.vizFrame.id))
+        },
+
+        onChangeMeasureSecond: function (oEvent) {
+
         }
     });
 })

@@ -1,32 +1,69 @@
 <mvc:View controllerName="sap.pieces.controller.chart.Chart"
           xmlns="sap.m"
-          xmlns:commons="sap.suite.ui.commons"
+          xmlns:f="sap.f"
+          xmlns:fb="sap.ui.comp.filterbar"
+          xmlns:core="sap.ui.core"
           xmlns:mvc="sap.ui.core.mvc"
-          xmlns:viz="sap.viz.ui5.controls">
-    <Page
-            class="sapUiNoContentPadding"
-            showNavButton="true"
-            navButtonPress="onNavBack">
-        <content>
-            <commons:ChartContainer
-                    id="chartContainer"
-                    showFullScreen="true"
-                    showPersonalization="true"
-                    autoAdjustHeight="false"
-                    personalizationPress="attachPersonalizationPress"
-                    contentChange="attachContentChange"
-                    title="Process Trending">
+          xmlns:viz="sap.viz.ui5.controls"
+          xmlns:commons="sap.suite.ui.commons">
+    <f:DynamicPage class="sapUiNoContentPadding">
+        <f:header>
+            <f:DynamicPageHeader pinnable="true">
+                <f:content>
+                    <fb:FilterBar
+                            useToolbar="false"
+                            showFilterConfiguration="false"
+                            filterBarExpanded="false">
+                        <fb:filterGroupItems>
+                            <fb:FilterGroupItem groupName="__$INTERNAL$" name="A" label="Choose Period" mandatory="true" partOfCurrentVariant="true" visibleInFilterBar="true">
+                                <fb:control>
+                                    <ComboBox type="Text">
+                                        <items>
+                                            <core:Item key="001" text="1 day"/>
+                                            <core:Item key="002" text="2 day"/>
+                                        </items>
+                                    </ComboBox>
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                            <fb:FilterGroupItem groupName="__$INTERNAL$" name="B" label="Chart Type" mandatory="true" partOfCurrentVariant="true" visibleInFilterBar="true">
+                                <fb:control>
+                                    <ComboBox type="Text">
+                                        <items>
+                                            <core:Item key="001" text="Failure Rate"/>
+                                            <core:Item key="002" text="xxx Rate"/>
+                                        </items>
+                                    </ComboBox>
+                                </fb:control>
+                            </fb:FilterGroupItem>
+                        </fb:filterGroupItems>
+                    </fb:FilterBar>
+                </f:content>
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+            <commons:ChartContainer title="Process Trending">
                 <commons:content>
-                    <commons:ChartContainerContent
-                            icon="sap-icon://line-chart"
-                            title="Line Chart">
+                    <commons:ChartContainerContent>
                         <commons:content>
-                            <viz:VizFrame id="chartContainerVizFrame" height="700px" width="100%"
-                                          uiConfig="{applicationSet:'fiori'}"/>
+                            <viz:VizFrame
+                                    id="chartContainerVizFrame"
+                                    height="800px"
+                                    width="100%"
+                                    uiConfig="{applicationSet:'fiori'}"/>
                         </commons:content>
                     </commons:ChartContainerContent>
                 </commons:content>
+                <commons:dimensionSelectors>
+                    <Select change="onChangeMeasureFirst">
+                        <core:Item key="total" text="Total Count"/>
+                        <core:Item key="success" text="Success Count"/>
+                    </Select>
+                    <Select change="onChangeMeasureSecond">
+                        <core:Item key="failure" text="Failure Count"/>
+                    </Select>
+                </commons:dimensionSelectors>
             </commons:ChartContainer>
-        </content>
-    </Page>
+        </f:content>
+    </f:DynamicPage>
 </mvc:View>
