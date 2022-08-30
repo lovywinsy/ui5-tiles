@@ -40,6 +40,7 @@ sap.ui.define([
                 oFilterBar.setFilterBarExpanded(false);
                 oFilterBar.setBasicSearch(this._oBasicSearchField);
                 let table = sap.ui.xmlfragment("sap.pieces.view.vh.GridValueHelpTable", this);
+                this._oValueHelpDialog.setSupportMultiselect(false);
                 this._oValueHelpDialog.setTable(table);
                 this._oValueHelpDialog.setTokens(this._oMultiInput.getTokens());
                 this._oValueHelpDialog.open();
