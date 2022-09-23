@@ -102,12 +102,112 @@ sap.ui.define([
             }
         },
 
+        _getChartFilterModel: function () {
+            return {
+                "status": {
+                    "measures": {
+                        "measureOneSelected":"completed",
+                        "measureOne": [
+                            {
+                                "key": "total",
+                                "name": "Total Count"
+                            },
+                            {
+                                "key": "completed",
+                                "name": "Completed Count"
+                            },
+                            {
+                                "key": "failed",
+                                "name": "Failed Count"
+                            },
+                            {
+                                "key": "completedWithError",
+                                "name": "Completed with Error Count"
+                            }
+                        ],
+                        "measureTwoSelected":"failed",
+                        "measureTwo": [
+                            {
+                                "key": "total",
+                                "name": "Total Count"
+                            },
+                            {
+                                "key": "completed",
+                                "name": "Completed Count"
+                            },
+                            {
+                                "key": "failed",
+                                "name": "Failed Count"
+                            },
+                            {
+                                "key": "completedWithError",
+                                "name": "Completed with Error Count"
+                            }
+                        ]
+                    }
+                },
+
+                "duration": {
+                    "measures": {
+                        "measureOneSelected":"total",
+                        "measureOne": [
+                            {
+                                "key": "total",
+                                "name": "Total Count"
+                            },
+                            {
+                                "key": "avg",
+                                "name": "Average Duration"
+                            },
+                            {
+                                "key": "max",
+                                "name": "Maximum Duration"
+                            },
+                            {
+                                "key": "min",
+                                "name": "Minimum Duration"
+                            }
+                        ],
+                        "measureTwoSelected":"avg",
+                        "measureTwo": [
+                            {
+                                "key": "total",
+                                "name": "Total Count"
+                            },
+                            {
+                                "key": "avg",
+                                "name": "Average Duration"
+                            },
+                            {
+                                "key": "max",
+                                "name": "Maximum Duration"
+                            },
+                            {
+                                "key": "min",
+                                "name": "Minimum Duration"
+                            }
+                        ]
+                    }
+                }
+            };
+        },
+
         onInit: function () {
+
+            this.setModel(new JSONModel([{"key": "status", "name": "Process Instance Status"}, {"key": "duration", "name": "Process Instance Duration"}]), "dimensionModel");
+
+            this.setModel(new JSONModel(this._getChartFilterModel().status.measures), "measureModel");
+
             this.setModel(new JSONModel(jQuery.sap.getModulePath(
                 "sap.pieces",
-                "/data/chart.json")));
-            let oVizFrame = this.byId(this._constants.vizFrame.id);
-            this._updateVizFrame(oVizFrame);
+                "/data/chart.json")
+            ));
+
+            this._updateVizFrame(this.byId(this._constants.vizFrame.id));
+        },
+
+        onDimensionChange: function (oEvent) {
+            this.setModel(new JSONModel(this._getChartFilterModel()[oEvent.getSource().getSelectedKey()].measures), "measureModel");
         },
 
         onNavBack: function () {
@@ -132,100 +232,9 @@ sap.ui.define([
          * @param {Object[]} feedItems Feed items to add
          */
         _addFeedItems: function (vizFrame, feedItems) {
-            for (var i = 0; i < feedItems.length; i++) {
-                vizFrame.addFeed(new FeedItem(feedItems[i]));
-            }
-        },
-
-        onChangeMeasureFirst: function (oEvent) {
-            this.byId(this._constants.vizFrame.id).destroyDataset();
-            this.byId(this._constants.vizFrame.id).destroyFeeds();
-
-            const newMeasure = oEvent.getSource().getSelectedItem().getKey();
-
-            this._constants = {
-                sampleName: "sap/suite/ui/commons/sample/ChartContainerSimpleToolbar",
-                vizFrame: {
-                    id: "chartContainerVizFrame",
-                    dataset: {
-                        dimensions: [{
-                            name: 'date',
-                            value: "{date}",
-                            dataType: 'date'
-                        }],
-                        measures: [{
-                            name: 'total',
-                            value: '{total}'
-                        }, {
-                            name: 'success',
-                            value: '{success}'
-                        }, {
-                            name: 'failure',
-                            value: '{failure}'
-                        }],
-                        data: {
-                            path: "/Processes"
-                        }
-                    },
-                    type: "dual_line",
-                    properties: {
-                        plotArea: {
-                            showGap: true,
-                            dataLabel: {
-                                visible: true
-                            }
-                        },
-                        valueAxis: {
-                            visible: true,
-                            title: {
-                                visible: true
-                            }
-                        },
-                        valueAxis2: {
-                            visible: true,
-                            title: {
-                                visible: true
-                            }
-                        },
-                        categoryAxis: {
-                            title: {
-                                visible: true
-                            },
-                            label: {
-                                formatString: ChartFormatter.DefaultPattern.MEDIUMDAY
-
-                            },
-                            interval: {
-                                unit: ''
-                            }
-                        },
-                        title: {
-                            visible: false
-                        },
-                        interaction: {
-                            syncValueAxis: false
-                        }
-                    },
-                    feedItems: [{
-                        'uid': "valueAxis",
-                        'type': "Measure",
-                        'values': [newMeasure]
-                    }, {
-                        'uid': "valueAxis2",
-                        'type': "Measure",
-                        'values': ["failure"]
-                    }, {
-                        'uid': "categoryAxis",
-                        'type': "Dimension",
-                        'values': ["date"]
-                    }]
-                }
-            },
-                this._updateVizFrame(this.byId(this._constants.vizFrame.id))
-        },
-
-        onChangeMeasureSecond: function (oEvent) {
-
+            feedItems.forEach((feedItem) => {
+                vizFrame.addFeed(new FeedItem(feedItem));
+            })
         }
     });
 })
